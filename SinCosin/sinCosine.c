@@ -2,43 +2,39 @@
 #include<conio.h>
 
 void main(){
-    float r,t,s,n,x;
-    int i,j,ch;
+    int i, n,ch;
+    float x, sum, t,csum=1, ct=1;
     clrscr();
     printf("1-Sin series\n2-cosine series");
     scanf("%d",&ch);
     printf("Enter value of x\n");
     scanf("%f",&x);
     printf("Enter the Limit\n");
-    scanf("%f",&n);
-    switch(ch) {
+    scanf("%d",&n);
+
+    x=x*3.14159/180;
+    t=x;
+    sum=x;
+
+    switch(ch){
         case 1:
-            r=(x*3.1415)/180;
-            t=r;
-            j=r;
-            i=2;
-            for(j=2; j<=n; j++){
-                t=(t*(-1)*r*r)/(i*(i+1));
-                s=s+t;
-                i=i+2;
-            }
-            printf("Sin %f = %f",x,s);
+            for(i=1;i<=n;i++){
+            t=(t*(-1)*x*x)/(2*i*(2*i+1));
+            sum=sum+t;
+        }
+            printf(" The value of Sin(%f) = %.4f",x,sum);
             break;
+
         case 2:
-            r=(x*3.1415)/180;
-            t=1;
-            j=1;
-            i=1;
-            for(j=2; j<=n; j++){
-                t=((-1)*r*r)/(i*(i+1));
-                s=s+t;
-                i=i+2;
-            }
-            printf("cos%f = %f",x,s);
+            for(i=1;i<=n;i++){
+             ct=ct*(-1)*x*x/(2*i*(2*i-1));
+             csum=csum+ct;
+        }
+            printf(" The value of Cos(%f) is : %.4f", x, csum);
             break;
         default:
-            printf("Wrong choice\n");
-            break;
+                printf("operation doesn't exist ");
+                break;
     }
     getch();
 }
