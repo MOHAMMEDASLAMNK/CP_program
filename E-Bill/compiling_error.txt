@@ -1,6 +1,0 @@
-C:\Users\RAFI\Desktop\C pack\E-Bill\Ebill.c: In function 'main':
-C:\Users\RAFI\Desktop\C pack\E-Bill\Ebill.c:7:5: warning: implicit declaration of function 'clrscr' [-Wimplicit-function-declaration]
-     clrscr();
-     ^
-C:\Users\RAFI\AppData\Local\Temp\cciBFkI2.o:Ebill.c:(.text+0xe): undefined reference to `clrscr'
-collect2.exe: error: ld returned 1 exit status
